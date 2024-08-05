@@ -1,12 +1,6 @@
 // src/App.jsx
+import WeatherForecast from './WeatherForecast';
 
-
-const App = () => {
-
-  return (
-    <h1>Hello world!</h1>
-  );
-}
 const weatherForecasts = [
   {
     day: 'Mon',
@@ -40,7 +34,31 @@ const weatherForecasts = [
     day: 'Fri',
     img: 'http://res.cloudinary.com/jkeohan/image/upload/v1535732381/cloudy-night.svg',
     imgAlt: 'moon overcast by clouds icon',
-    conditions: '
+    conditions: 'cloudy',
+    time: 'Night',
+  },
+];
 
 
-export default App
+
+const App = () => {
+  return (
+    <>
+      <h1>Local Weather</h1>
+      <section>
+        {weatherForecasts.map((forecast, index) => (
+          <WeatherForecast 
+            key={index}
+            day={forecast.day}
+            img={forecast.img}
+            imgAlt={forecast.imgAlt}
+            conditions={forecast.conditions}
+            time={forecast.time}
+          />
+        ))}
+      </section>
+    </>
+  );
+}
+
+export default App;
