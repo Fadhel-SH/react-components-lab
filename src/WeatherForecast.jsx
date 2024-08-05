@@ -1,4 +1,7 @@
+import WeatherIcon from './WeatherIcon';
+import WeatherData from './WeatherData';
 import './WeatherForecast.css';
+
 const WeatherForecast = ({ day, img, imgAlt, conditions, time }) => {
     return (
       <div className="weather">
